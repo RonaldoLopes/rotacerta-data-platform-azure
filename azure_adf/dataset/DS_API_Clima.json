@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "f-23.55,-46.63?format=j1"
+				"relativeUrl": "-23.55,-46.63?format=j1"
 			}
 		},
 		"schema": {}
