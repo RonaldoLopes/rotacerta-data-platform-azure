@@ -5,6 +5,14 @@
 			"referenceName": "LS_ADLS_RotaCerta",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"nomeContainer": {
+				"type": "string"
+			},
+			"nomePasta": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
