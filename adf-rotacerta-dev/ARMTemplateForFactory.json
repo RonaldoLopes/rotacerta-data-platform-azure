@@ -7,9 +7,33 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-rotacerta-dev"
 		},
+		"LS_SQL_Pedidos_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL_Pedidos'"
+		},
 		"LS_ADLS_RotaCerta_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://strotacertadevadf.dfs.core.windows.net/"
+		},
+		"LS_SQL_Pedidos_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-rotacerta-dev-v3.database.windows.net"
+		},
+		"LS_SQL_Pedidos_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqldb-rotacerta"
+		},
+		"LS_SQL_Pedidos_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "rotacertaadmin"
+		},
+		"LS_KeyVault_RotaCerta_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-rotacerta-dev.vault.azure.net/"
+		},
+		"LS_API_Clima_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.openmeteo.com/v1/"
 		}
 	},
 	"variables": {
@@ -25,6 +49,56 @@
 				"type": "AzureBlobFS",
 				"typeProperties": {
 					"url": "[parameters('LS_ADLS_RotaCerta_properties_typeProperties_url')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SQL_Pedidos')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_SQL_Pedidos_properties_typeProperties_server')]",
+					"database": "[parameters('LS_SQL_Pedidos_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_SQL_Pedidos_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_SQL_Pedidos_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_KeyVault_RotaCerta')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('LS_KeyVault_RotaCerta_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_API_Clima')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('LS_API_Clima_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
 				}
 			},
 			"dependsOn": []

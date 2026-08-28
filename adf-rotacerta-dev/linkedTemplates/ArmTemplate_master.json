@@ -7,9 +7,33 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-rotacerta-dev"
 		},
+		"LS_SQL_Pedidos_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL_Pedidos'"
+		},
 		"LS_ADLS_RotaCerta_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://strotacertadevadf.dfs.core.windows.net/"
+		},
+		"LS_SQL_Pedidos_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-rotacerta-dev-v3.database.windows.net"
+		},
+		"LS_SQL_Pedidos_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqldb-rotacerta"
+		},
+		"LS_SQL_Pedidos_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "rotacertaadmin"
+		},
+		"LS_KeyVault_RotaCerta_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-rotacerta-dev.vault.azure.net/"
+		},
+		"LS_API_Clima_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://api.openmeteo.com/v1/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -38,8 +62,26 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_SQL_Pedidos_password": {
+						"value": "[parameters('LS_SQL_Pedidos_password')]"
+					},
 					"LS_ADLS_RotaCerta_properties_typeProperties_url": {
 						"value": "[parameters('LS_ADLS_RotaCerta_properties_typeProperties_url')]"
+					},
+					"LS_SQL_Pedidos_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_Pedidos_properties_typeProperties_server')]"
+					},
+					"LS_SQL_Pedidos_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_Pedidos_properties_typeProperties_database')]"
+					},
+					"LS_SQL_Pedidos_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_Pedidos_properties_typeProperties_userName')]"
+					},
+					"LS_KeyVault_RotaCerta_properties_typeProperties_baseUrl": {
+						"value": "[parameters('LS_KeyVault_RotaCerta_properties_typeProperties_baseUrl')]"
+					},
+					"LS_API_Clima_properties_typeProperties_url": {
+						"value": "[parameters('LS_API_Clima_properties_typeProperties_url')]"
 					}
 				}
 			},

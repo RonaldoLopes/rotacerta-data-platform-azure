@@ -5,8 +5,26 @@
 		"factoryName": {
 			"value": "adf-rotacerta-dev"
 		},
+		"LS_SQL_Pedidos_password": {
+			"value": ""
+		},
 		"LS_ADLS_RotaCerta_properties_typeProperties_url": {
 			"value": "https://strotacertadevadf.dfs.core.windows.net/"
+		},
+		"LS_SQL_Pedidos_properties_typeProperties_server": {
+			"value": "sql-rotacerta-dev-v3.database.windows.net"
+		},
+		"LS_SQL_Pedidos_properties_typeProperties_database": {
+			"value": "sqldb-rotacerta"
+		},
+		"LS_SQL_Pedidos_properties_typeProperties_userName": {
+			"value": "rotacertaadmin"
+		},
+		"LS_KeyVault_RotaCerta_properties_typeProperties_baseUrl": {
+			"value": "https://kv-rotacerta-dev.vault.azure.net/"
+		},
+		"LS_API_Clima_properties_typeProperties_url": {
+			"value": "https://api.openmeteo.com/v1/"
 		}
 	}
 }
