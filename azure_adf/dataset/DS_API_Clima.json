@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "forecast?latitude=-23.55&longitude=-46.63&current=temperature_2m,precipitation,weather_code&timezone=America/Sao_Paulo"
+				"relativeUrl": "f-23.55,-46.63?format=j1"
 			}
 		},
 		"schema": {}
