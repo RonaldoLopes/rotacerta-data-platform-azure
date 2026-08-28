@@ -1,0 +1,63 @@
+{
+	"name": "DS_SQL_Pedidos",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_Pedidos",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "pedido_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "cliente_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "regiao",
+				"type": "varchar"
+			},
+			{
+				"name": "transportadora_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "data_pedido",
+				"type": "date"
+			},
+			{
+				"name": "data_prevista_entrega",
+				"type": "date"
+			},
+			{
+				"name": "data_real_entrega",
+				"type": "date"
+			},
+			{
+				"name": "valor_frete",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 2
+			},
+			{
+				"name": "status_entrega",
+				"type": "varchar"
+			},
+			{
+				"name": "_ingest_ts",
+				"type": "datetime2",
+				"scale": 7
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Pedidos"
+		}
+	}
+}
