@@ -1,0 +1,40 @@
+{
+	"name": "DS_Landing_Faturas",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_RotaCerta",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "faturas",
+				"fileSystem": "landing"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "pedido_id",
+				"type": "String"
+			},
+			{
+				"name": "transportadora_id",
+				"type": "String"
+			},
+			{
+				"name": "data_fatura",
+				"type": "String"
+			},
+			{
+				"name": "custo_repassado",
+				"type": "String"
+			}
+		]
+	}
+}

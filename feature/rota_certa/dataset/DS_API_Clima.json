@@ -1,0 +1,17 @@
+{
+	"name": "DS_API_Clima",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_API_Clima",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {}
+	}
+}
