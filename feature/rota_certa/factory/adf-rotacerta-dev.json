@@ -1,0 +1,15 @@
+{
+	"name": "adf-rotacerta-dev",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "westus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a3267734-ae8a-4697-8bdd-4bd6ba4c6d77",
+		"tenantId": "0be73755-2dd8-4b96-87c3-8d7720ef77ea"
+	}
+}

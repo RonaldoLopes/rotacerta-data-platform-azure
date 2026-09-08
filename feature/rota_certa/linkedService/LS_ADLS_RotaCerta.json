@@ -1,0 +1,11 @@
+{
+	"name": "LS_ADLS_RotaCerta",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://strotacertadevadf.dfs.core.windows.net/"
+		}
+	}
+}
